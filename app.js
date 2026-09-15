@@ -10,8 +10,9 @@
     es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
   $$(".reveal").forEach((el, i) => { el.style.transitionDelay = (i % 4) * 60 + "ms"; io.observe(el); });
+  $$(".split").forEach((el) => io.observe(el));
   // safety net: never leave content hidden
-  setTimeout(() => $$(".reveal:not(.in)").forEach((el) => {
+  setTimeout(() => $$(".reveal:not(.in), .split:not(.in)").forEach((el) => {
     if (el.getBoundingClientRect().top < innerHeight) el.classList.add("in");
   }), 1800);
 
@@ -234,7 +235,7 @@
   qOpts.addEventListener("click", (e) => {
     const b = e.target.closest(".q-opt"); if (!b || locked) return; locked = true;
     const q = Q[qi], i = +b.dataset.i, ok = i === q.a;
-    if (ok) score++;
+    if (ok) { score++; window.__confetti && window.__confetti(b); }
     $$(".q-opt", qOpts).forEach((x, j) => { if (j === q.a) x.classList.add("ok"); else if (j === i) x.classList.add("bad"); });
     $(".gap", qBox).textContent = q.o[q.a];
     qExp.innerHTML = (ok ? "✦ Верно. " : "Мимо. ") + q.e;
@@ -256,12 +257,15 @@
   });
   showQ();
 
-  /* ---------- count up ---------- */
+  /* ---------- odometer ---------- */
+  $$("[data-count]").forEach((el) => {
+    const str = el.dataset.count;
+    el.innerHTML = '<span class="odo">' + [...str].map((d, k) => `<span class="dg" style="--k:${str.length - k}"><i>${Array.from({ length: 20 }, (_, n) => `<span>${n % 10}</span>`).join("")}</i></span>`).join("") + "</span>";
+  });
   const cio = new IntersectionObserver((es) => es.forEach((e) => {
     if (!e.isIntersecting) return; cio.unobserve(e.target);
-    const el = e.target, to = +el.dataset.count, t0 = performance.now(), dur = reduce ? 1 : 1600;
-    const step = (t) => { const k = Math.min(1, (t - t0) / dur); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step);
+    const str = e.target.dataset.count;
+    $$(".dg i", e.target).forEach((col, k) => { col.style.transform = `translateY(-${(10 + +str[k]) * 5}%)`; });
   }), { threshold: 0.5 });
   $$("[data-count]").forEach((el) => cio.observe(el));
 
@@ -279,7 +283,7 @@
 
   /* ---------- video tabs ---------- */
   const vid = $("#demoVideo"), vName = $("#vName");
-  const VN = { constructor: "конструктор форм", dialog: "диалоги с озвучкой", map: "карта темы", cizgi: "каталог мультфильмов" };
+  const VN = { constructor: "конструктор форм", dialog: "диалоги с озвучкой", map: "карта темы", cizgi: "каталог мультфильмов", harmony: "тренажёр гармонии", apps: "каталог приложений" };
   $$(".vt").forEach((b) => b.addEventListener("click", () => {
     $$(".vt").forEach((x) => { x.classList.toggle("on", x === b); x.setAttribute("aria-selected", x === b); });
     vid.style.opacity = 0;

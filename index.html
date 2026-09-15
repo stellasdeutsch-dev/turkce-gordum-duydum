@@ -15,6 +15,14 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-core">
+    <div class="intro-mascot"><svg class="intro-sprout" viewBox="0 0 60 70"><path d="M30 68C30 50 30 40 26 30 20 16 36 6 42 16S30 28 22 22"/></svg><span class="eye"><i></i></span><span class="eye"><i></i></span></div>
+    <div class="intro-word">alterna</div>
+    <div class="intro-count"><span id="introNum">0</span>%</div>
+  </div>
+  <i class="curtain c1"></i><i class="curtain c2"></i><i class="curtain c3"></i>
+</div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -37,6 +45,7 @@
     <a href="#build" class="pill">Конструктор</a>
     <a href="#quiz" class="pill">Квиз</a>
     <a href="#inside" class="pill">Платформа</a>
+    <a href="#reviews" class="pill">Отзывы</a>
     <a href="#buy" class="pill pill-hot">$30 · навсегда</a>
   </nav>
 </header>
@@ -60,7 +69,7 @@
     <span class="tag t3">ИСТОРИИ</span>
   </h1>
 
-  <h2 class="hero-h reveal">Geldi или gelmiş?<br><span class="mint-t">Турецкое прошлое</span> без зубрёжки</h2>
+  <h2 class="hero-h reveal">Турецкое прошлое:<br><span class="morph" id="morph">geldi</span><br>видел или <span class="mint-t">слышал?</span></h2>
   <p class="hero-sub reveal">Одно прошедшее время говорит: <b>я видел</b>. Другое: <b>мне сказали</b>. Разберём оба на историях. Потом соберём формы руками. Потом проверим себя.</p>
 
   <div class="hero-cta reveal">
@@ -89,7 +98,7 @@
   <span class="chip mint reveal">01 / ИСТОРИЯ</span>
   <h2 class="big-h reveal">Турецкий <span class="mint-t">казался изи.</span> Ровно до прошедшего времени.</h2>
 
-  <div class="story reveal">
+  <div class="story reveal" data-scrub>
     <p>Я казах. Турецкий для меня как родственник. Дальний, но узнаваемый.</p>
     <p>Слова похожие. Порядок слов похожий. Суффиксы липнут к слову, как у нас. Думаю, ну всё, изи.</p>
     <p>Я поехал в Турцию. В Турции был TÖMER. На TÖMER был год турецкого. Год турецкого был полезный.</p>
@@ -128,7 +137,7 @@
 <!-- WHY: pinwheel -->
 <section class="mint sec" id="why">
   <svg class="wave-top" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V30Q50 0 100 30T200 30T300 30T400 30T500 30T600 30T700 30T800 30T900 30T1000 30T1100 30T1200 30V60Z"/></svg>
-  <h2 class="mega reveal">ЗАЧЕМ ТУРКАМ<br><span class="hl">ДВА</span> ПРОШЛЫХ</h2>
+  <h2 class="mega split">ЗАЧЕМ ТУРКАМ<br><span class="hl">ДВА</span> ПРОШЛЫХ</h2>
 
   <p class="lead reveal">Турецкий глагол всегда сообщает, <b>откуда вы это знаете</b>. Нажмите на лепесток.</p>
 
@@ -174,7 +183,7 @@
 <section class="blue sec" id="build">
   <svg class="bg-loop" viewBox="0 0 600 900" preserveAspectRatio="none" aria-hidden="true"><path d="M660 80C420 20 200 120 260 300S560 460 420 640 20 700 -40 860"/></svg>
   <span class="chip mint reveal">03 / КОНСТРУКТОР</span>
-  <h2 class="mega w reveal">СОБЕРИ<br>ФОРМУ <span class="mint-t">РУКАМИ</span></h2>
+  <h2 class="mega w split">СОБЕРИ<br>ФОРМУ <span class="mint-t">РУКАМИ</span></h2>
   <p class="lead-w reveal">Выберите глагол, лицо и режим. Форма соберётся по кусочкам, и под ней будет написано, почему именно так.</p>
 
   <div class="builder reveal" id="builder">
@@ -271,7 +280,7 @@
 <!-- QUIZ -->
 <section class="black sec" id="quiz">
   <span class="chip mint reveal">06 / ПРОВЕРКА</span>
-  <h2 class="mega w reveal">СВИДЕТЕЛЬ<br>ИЛИ <span class="pink-t">СПЛЕТНИК?</span></h2>
+  <h2 class="mega w split">СВИДЕТЕЛЬ<br>ИЛИ <span class="pink-t">СПЛЕТНИК?</span></h2>
   <p class="lead-w reveal">8 ситуаций. Выберите форму. После ответа — короткое объяснение.</p>
 
   <div class="quiz reveal" id="quizBox">
@@ -303,7 +312,7 @@
   <span class="chip mint reveal">100% СОБРАНО ВРУЧНУЮ</span>
   <h2 class="manifest reveal">ЭТОТ РАЗБОР — ✦ ОДИН ИЗ <span class="mint-t">128.</span> ОСТАЛЬНЫЕ 127 УЖЕ ЛЕЖАТ ✦ ПО УРОВНЯМ. <span class="pink-t">ИСКАТЬ НЕ НАДО.</span></h2>
 
-  <h2 class="mega w reveal center">ЧТО ВНУТРИ<span class="fl">✿</span></h2>
+  <h2 class="mega w split center">ЧТО ВНУТРИ<span class="fl">✿</span></h2>
 
   <div class="work reveal">
     <article class="row r-pink">
@@ -330,7 +339,7 @@
 <!-- WORLDS -->
 <section class="blue sec" id="worlds">
   <span class="chip mint reveal">ВСЕЛЕННАЯ ALTERNA</span>
-  <h2 class="mega w reveal">ОТКРЫВАЕШЬ <span class="mint-t">СВОЙ</span><br>УРОВЕНЬ И БЕРЁШЬ</h2>
+  <h2 class="mega w split">ОТКРЫВАЕШЬ <span class="mint-t">СВОЙ</span><br>УРОВЕНЬ И БЕРЁШЬ</h2>
   <p class="lead-w reveal">Не одна папка, а шесть отдельных миров. У каждого свой способ слушать и смотреть. Листайте.</p>
 
   <div class="rail" id="rail">
@@ -353,11 +362,96 @@
     <button class="vt" data-v="dialog" role="tab" aria-selected="false">Диалоги с озвучкой</button>
     <button class="vt" data-v="map" role="tab" aria-selected="false">Карта темы</button>
     <button class="vt" data-v="cizgi" role="tab" aria-selected="false">Каталог мультфильмов</button>
+    <button class="vt" data-v="harmony" role="tab" aria-selected="false">Тренажёр гармонии</button>
+    <button class="vt" data-v="apps" role="tab" aria-selected="false">Каталог приложений</button>
   </div>
   <div class="vframe reveal">
     <div class="vbar"><i></i><i></i><i></i><span id="vName">alterna · конструктор</span></div>
     <video id="demoVideo" src="media/v-constructor.mp4" poster="media/v-constructor.jpg" muted loop playsinline preload="metadata"></video>
   </div>
+</section>
+
+<!-- ROUTE (sticky sprout) -->
+<section class="route" id="route">
+  <div class="route-sticky">
+    <div class="route-head">
+      <span class="chip mint">МАРШРУТ ВНУТРИ ПЛАТФОРМЫ</span>
+      <h2 class="mega w split">ОТ СЕМЕЧКА<br>ДО <span class="mint-t">C1</span></h2>
+    </div>
+    <div class="route-body">
+      <svg class="stem" viewBox="0 0 200 600" aria-hidden="true">
+        <path class="stem-bg" d="M100 590C100 520 60 480 90 420S150 330 110 270 60 170 100 110 110 40 100 10"/>
+        <path class="stem-fg" id="stemPath" d="M100 590C100 520 60 480 90 420S150 330 110 270 60 170 100 110 110 40 100 10"/>
+        <g class="leaves">
+          <path class="leaf l0" d="M92 470c-30-6-46-22-50-44 26 0 44 14 50 44z"/>
+          <path class="leaf l1" d="M126 350c30-8 48-24 52-48-28 2-46 18-52 48z"/>
+          <path class="leaf l2" d="M92 240c-30-4-48-20-54-42 26-2 46 12 54 42z"/>
+          <path class="leaf l3" d="M104 140c28-10 44-28 46-50-26 4-42 22-46 50z"/>
+          <circle class="bloom" cx="100" cy="14" r="16"/>
+        </g>
+      </svg>
+      <div class="route-cards">
+        <article class="rc on" data-s="0"><span class="rc-lv">A1</span><h3>Фундамент</h3><p class="rc-t">6–10 недель · 60–90 часов</p><p>Понять, как устроен турецкий: слова растут вправо, аффиксы заменяют предлоги, гласные подстраиваются.</p></article>
+        <article class="rc" data-s="1"><span class="rc-lv">A2</span><h3>Первые фразы в дело</h3><p class="rc-t">3–5 месяцев</p><p>Магазин, транспорт, соседи. Прошлое, будущее, первые мультфильмы без русских субтитров.</p></article>
+        <article class="rc" data-s="2"><span class="rc-lv">B1</span><h3>Выход в живой язык</h3><p class="rc-t">6–9 месяцев</p><p>Подкасты, сериалы, разговорный клуб. Тут и нужны -dı и -mış на автомате.</p></article>
+        <article class="rc" data-s="3"><span class="rc-lv">B2</span><h3>Убрать акцент из речи</h3><p class="rc-t">6–12 месяцев</p><p>Кино, книги, работа. Экзаменационные блоки по уровню.</p></article>
+        <article class="rc" data-s="4"><span class="rc-lv">C1</span><h3>Отделка</h3><p class="rc-t">год и дальше</p><p>Язык, на котором турецкий перестаёт быть иностранным.</p></article>
+      </div>
+      <div class="route-phone"><img id="routeImg" src="media/p-route.webp" alt="Маршрут от нуля до свободного турецкого на платформе"></div>
+    </div>
+    <div class="route-bar"><i id="routeBar"></i></div>
+  </div>
+</section>
+
+<!-- CAROUSEL -->
+<section class="black sec" id="spin">
+  <span class="chip mint reveal">ЭКРАНЫ ПЛАТФОРМЫ</span>
+  <h2 class="big-h reveal">Покрутите. <span class="mint-t">Это всё — внутри.</span></h2>
+  <p class="lead-w reveal">Тяните пальцем влево-вправо. Нажмите на экран, чтобы открыть крупно.</p>
+  <div class="spin-stage" id="spinStage">
+    <div class="spin-ring" id="spinRing">
+      <figure><img src="media/p-stats.webp" alt="Статистика каталога" loading="lazy"><figcaption>160 материалов</figcaption></figure>
+      <figure><img src="media/p-ladder.webp" alt="Лестница CEFR" loading="lazy"><figcaption>Лестница CEFR</figcaption></figure>
+      <figure><img src="media/p-heat.webp" alt="Тепловая карта уровней" loading="lazy"><figcaption>Карта уровней</figcaption></figure>
+      <figure><img src="media/p-buz.webp" alt="Карточка фильма Buz Devri 2" loading="lazy"><figcaption>Карточка фильма</figcaption></figure>
+      <figure><img src="media/p-games.webp" alt="Мини-игры" loading="lazy"><figcaption>Угадай мультик</figcaption></figure>
+      <figure><img src="media/p-darkclub.webp" alt="Клуб мультиманов" loading="lazy"><figcaption>Клуб и значки</figcaption></figure>
+      <figure><img src="media/p-timeline.webp" alt="История языка" loading="lazy"><figcaption>История языка</figcaption></figure>
+      <figure><img src="media/p-podroute.webp" alt="Маршрут подкастов" loading="lazy"><figcaption>Маршрут подкастов</figcaption></figure>
+      <figure><img src="media/p-free.webp" alt="72 бесплатных сервиса" loading="lazy"><figcaption>72 бесплатных</figcaption></figure>
+      <figure><img src="media/p-anki.webp" alt="Карточка сервиса Anki" loading="lazy"><figcaption>Карточки сервисов</figcaption></figure>
+      <figure><img src="media/p-svyazka.webp" alt="Связка инструментов" loading="lazy"><figcaption>Связка, а не зоопарк</figcaption></figure>
+      <figure><img src="media/p-tg.webp" alt="Alterna в Telegram" loading="lazy"><figcaption>Telegram</figcaption></figure>
+    </div>
+  </div>
+  <div class="spin-ctrl"><button class="sc" id="spinPrev" aria-label="Назад">←</button><span id="spinCap">160 материалов</span><button class="sc" id="spinNext" aria-label="Вперёд">→</button></div>
+</section>
+
+<!-- REVIEWS -->
+<section class="blue sec" id="reviews">
+  <svg class="bg-loop" viewBox="0 0 600 900" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 120C200 60 520 140 440 330S60 420 160 600 560 700 660 860"/></svg>
+  <span class="chip mint reveal">ОТЗЫВЫ · ЧЕСТНО</span>
+  <h2 class="mega w split">ЭТА СИСТЕМА<br><span class="mint-t">УЖЕ РАБОТАЕТ</span></h2>
+  <p class="lead-w reveal">Alterna собрана по той же системе, что и <b>Stellas</b> — наша платформа немецкого. Ниже реальные сообщения учеников Stellas: язык другой, устройство то же. Потяните ползунок и сравните.</p>
+
+  <div class="compare reveal" id="compare">
+    <img src="media/n-hubA.webp" alt="Хаб A0–A2 Alterna, турецкий" class="cmp-a">
+    <div class="cmp-b" id="cmpB"><img src="media/de-hub.webp" alt="Хаб A0–A2 Stellas, немецкий"></div>
+    <span class="cmp-l l-de">STELLAS · DE</span><span class="cmp-l l-tr">ALTERNA · TR</span>
+    <input type="range" min="0" max="100" value="50" id="cmpRange" aria-label="Сравнить Stellas и Alterna">
+    <i class="cmp-knob" id="cmpKnob"><b>⟷</b></i>
+  </div>
+
+  <div class="qmarq" aria-hidden="true">
+    <div class="qm-row"><span>«Никакой воды»</span><span>✦</span><span>«Сдала экзамен B1»</span><span>✦</span><span>«С A2 до B2»</span><span>✦</span><span>«Занимаюсь каждый день»</span><span>✦</span><span>«Доступная цена за такой объём»</span><span>✦</span><span>«Никакой воды»</span><span>✦</span><span>«Сдала экзамен B1»</span><span>✦</span><span>«С A2 до B2»</span><span>✦</span><span>«Занимаюсь каждый день»</span><span>✦</span><span>«Доступная цена за такой объём»</span><span>✦</span></div>
+    <div class="qm-row rev"><span>«Всё по полочкам»</span><span>✦</span><span>«Даже 5 минут — польза»</span><span>✦</span><span>«Хороший старт с нуля»</span><span>✦</span><span>«Для тех, кто ценит время»</span><span>✦</span><span>«Всё по полочкам»</span><span>✦</span><span>«Даже 5 минут — польза»</span><span>✦</span><span>«Хороший старт с нуля»</span><span>✦</span><span>«Для тех, кто ценит время»</span><span>✦</span></div>
+  </div>
+
+  <div class="swipe reveal" id="swipe" aria-live="polite"></div>
+  <div class="swipe-ctrl"><button class="sc" id="swBack" aria-label="Предыдущий">↺</button><span id="swCount">1 / 17</span><button class="sc" id="swNext" aria-label="Следующий">→</button></div>
+  <p class="swipe-hint">Смахните карточку или нажмите →. Нажмите на скриншот, чтобы открыть целиком.</p>
+
+  <div class="rev-cta"><a class="btn btn-mint" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener" data-cta="reviews">Хочу такую систему для турецкого · $30</a></div>
 </section>
 
 <!-- PERSONA -->
@@ -402,7 +496,7 @@
 <!-- WHY ALTERNA -->
 <section class="mint sec" id="whyus">
   <svg class="wave-top" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V30Q50 0 100 30T200 30T300 30T400 30T500 30T600 30T700 30T800 30T900 30T1000 30T1100 30T1200 30V60Z"/></svg>
-  <h2 class="mega reveal">ПОЧЕМУ ИМЕННО<br><span class="hl">ALTERNA</span></h2>
+  <h2 class="mega split">ПОЧЕМУ ИМЕННО<br><span class="hl">ALTERNA</span></h2>
   <div class="pinwheel pw-static reveal">
     <div class="petal p1"><span class="pt">✦ ПОРЯДОК</span><span class="pd">Лестница A1 → C1. На каждой ступени свой срок, свои задачи и связка инструментов.</span></div>
     <div class="petal p2"><span class="pt">✦ ПРОВЕРЕНО</span><span class="pd">Каналы, фильмы и приложения отобраны руками. О нерабочей ссылке можно сообщить.</span></div>
@@ -486,6 +580,9 @@
 <a class="fab" id="fab" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener" data-cta="fab"><span>$30</span> Всё уже собрано →</a>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
+<div class="lightbox" id="lightbox" hidden><button class="lb-x" aria-label="Закрыть">✕</button><img id="lbImg" alt=""></div>
+<div class="sparks" id="sparks" aria-hidden="true"></div>
 <script src="app.js"></script>
+<script src="anim.js"></script>
 </body>
 </html>
